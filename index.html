@@ -18,35 +18,44 @@ parse JSON-->
     <h1>Weather Dashboard</h1>
 </header>
 
-<section class="flex-container">
+<!-- <section class="flex-container"> -->
     <!-- search bar -->
-    <div class="box">
+    <!-- <div class="box">
     <h3>Search for a city:</h3>
     <form>
         <input type="text" class="form-input" />
-        <button type="submit">
+        <button type="submit" id="button">
             Search
           </button>
     </form>
-    </div>
+    </div> -->
     <!-- current conditions -->
-    <div class="box">
+    <!-- <div class="box">
         <h4>City Name and Date</h4>
     </div>
-</section>
+</section> -->
+
+<div class="input">
+    <input type="text" class="inputValue">
+    <input type="submit" value="Submit">
+</div>
+
+<div class="display">
+    <h1 class="name"></h1>
+    <p class="icon"></p>
+    <p class="temp"></p>
+    <p class="humidity"></p>
+    <p class="wind"></p>
+</div>
 
 <!-- five day forecast -->
 <h1>5-Day Forecast</h1>
 <div class="flex-container">
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
-    <div class="box">5</div>
+    <div class="forecast"></div>
   </div>
 
 
 
-
+<script> src="script.js"</script>
 </body>
 </html>
