@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Weather Dashboard</title>
 </head>
 
 <!-- body -->
-<body>
-<header>
+<body class="flex-column min-100-vh">
+<header class="hero">
     <h1>Weather Dashboard</h1>
 </header>
 
+<!-- search bar failed attempt #1 -->
 <!-- <section class="flex-container"> -->
     <!-- search bar -->
     <!-- <div class="box">
@@ -30,8 +32,8 @@
     </div>
 </section> -->
 
-<!-- search bar -->
-<div class="input">
+<!-- search bar failed attempt #2 -->
+<!-- <div class="input">
     <input type="text" class="input_text">
     <input type="submit" value="Submit" class="submit">
 </div>
@@ -44,14 +46,47 @@
     <p class="humidity"></p>
     <p class="wind"></p>
 </div>
-</div>
+</div> -->
+
+<!-- search bar attempt #3 -->
+<main class="flex-row justify-space-between">
+    <div class="col-12 col-md-4 float-left">
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By City:</h3>
+        <form id="user-form" class="card-body">
+          <label class="form-label" for="city"></label>
+          <input name="city" id="myInput" type="text" class="form-input" />
+          <button type="submit" class="btn" id="searchBtn">Search</button>
+        </form>
+      </div>
+    
+    <div class="card history">
+        <h3 class="card-header text-uppercase">Search History</h3>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-8 float-right">
+        <div>
+          <h2 class="subtitle text-uppercase bg-light">Current Weather</h2>
+          <div class="city"></div>
+    </div>
+
+    <div>
+        <h2>5 Day forecast</h2>
+        <div class="five-day"></div>
+      </div>
+    </div>
+
+
+
+
+
 
 <!-- five day forecast -->
 <!-- <h1>5-Day Forecast</h1>
 <div class="flex-container">
     <div class="forecast"></div>
   </div> -->
-
 
 
 <script> src="script.js"</script>
