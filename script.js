@@ -46,3 +46,16 @@ $(".history").on('click', function(event){
 // event listener
 document.getElementById("searchBtn").addEventListener("click", addResult);
 document.getElementById("searchBtn").addEventListener('click', getResult);
+
+// function to get current weather and convert lat and lon to city
+function getResult(){   
+
+    $(".five-day").empty();
+    $(".city").empty()
+
+   inputCity = document.getElementById("myInput").value;   
+    var countryCode='US';    
+    var cityCode=inputCity;       
+    
+    var geoLon;   
+    var geoLat;
