@@ -37,6 +37,7 @@ function addResult(){
 
 // event listener
 $(".history").on('click', function(event){
+    // prevent page from refreshing
     event.preventDefault();
     $(".subtitle").attr("style", "display:inline")
      document.getElementById("myInput").value = event.target.id;
@@ -78,4 +79,33 @@ function getResult(){
     $(".city").append(wind)    
     $(".city").append(humidity)
     
+// first api call
     var geoUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityCode + '&limit=5&appid=37ca395d783a15ec329da91c4fd43c95'
+
+    fetch(geoUrl)
+    .then(function (response){
+      return response.json();
+    })
+    .then(function (data){
+      geoLon = data[0].lon;
+      geoLat = data[0].lat;
+
+ // convert lat and lon to city
+      var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + geoLat + '&lon='+ geoLon + '&exclude=minutely,hourly,alerts&units=imperial&appid=37ca395d783a15ec329da91c4fd43c95';
+        
+      fetch(weatherUrl)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        weatherIcon = data.current.weather[0].icon;
+        imgSrc = 'https://openweathermap.org/img/wn/' + weatherIcon + '.png';
+        icon.attr('src', imgSrc)
+
+        cityName.text(cityCode);
+
+        // date from openweathermap api
+        var date = new Date(data.current.dt * 1000);
+        dateTime.text("("+ (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear() + ")");
+
+        
