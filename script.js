@@ -125,7 +125,11 @@ function getResult(){
             //date
             this["forecastDay"+i] = new Date(data.daily[i].dt * 1000);
             
+            // weather variables forecast
             (this["futureDate"+i]).text(((this["forecastDay"+i]).getMonth()+i) + "/" + (this["firecastDay"+i]).getDate() + "/" + (this["forecastDay"+i]).getFullYear());
-            
-
+            (this["futureTemp"=i]).text("Temp: " + data.daily[i].temp.day + "F");
+            (this["futureHumidity"=i]).text("Humidity: " + data.daily[i].temp.day + "%");
+            (this["futureWind"=i]).text("Wind Speed: " + data.daily[i].wind_speed.day + "MPH");
+        
+        
         }
