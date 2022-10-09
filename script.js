@@ -130,6 +130,34 @@ function getResult(){
             (this["futureTemp"=i]).text("Temp: " + data.daily[i].temp.day + "F");
             (this["futureHumidity"=i]).text("Humidity: " + data.daily[i].temp.day + "%");
             (this["futureWind"=i]).text("Wind Speed: " + data.daily[i].wind_speed.day + "MPH");
-        
-        
+            (this["weatherIcon"+i])= data.daily[i].weather[0].icon;
+            //append
+            $(".five-day").append(container)
+            container.append((this["futureDate"+i]));
+            container.append((this["futureIcon"+i]));
+            container.append((this["futureTemp"+i]));
+            container.append((this["futureWind"+i]));
+            container.append((this["futureHumidity"+i]));
+            container.addClass("forecast-card")
         }
+
+// local storage
+function getInfo() {
+    var currentList = localStorage.getItem("city");
+    if (currentList !== null) {
+        newList= JSON.parse(currentList);
+        return newList;
+    } else {
+        newList = [];
+    }
+    return newList;
+}
+
+//render
+function renderInfo () {
+    var historyList = getInfo();
+    for (var i=0;i<historyList.length;i++) {
+        var inputCity = historyList[i];
+        
+    }
+}
