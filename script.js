@@ -108,4 +108,24 @@ function getResult(){
         var date = new Date(data.current.dt * 1000);
         dateTime.text("("+ (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear() + ")");
 
-        
+        // weather variables text
+        temp.text("Temp: " + data.current.temp + "F");
+        humidity.text("Humidity: " data.current.humidity + "%");
+        wind.text("Wind Speed: " + data.current.wind_speed + "MPH");
+
+        // 5-day forecast
+        for (var i=1; i<6; i++) {
+            var container = $("<div>")
+            this["futureDate"+i] = $("<h>")
+            this["futureIcon"+i] = $("<img>")
+            this["futureTemp"+i] = $("<div>")
+            this["futureHumidity"+i] = $("<div>")
+            this["futureWind"+i] = $("<div>")
+
+            //date
+            this["forecastDay"+i] = new Date(data.daily[i].dt * 1000);
+            
+            (this["futureDate"+i]).text(((this["forecastDay"+i]).getMonth()+i) + "/" + (this["firecastDay"+i]).getDate() + "/" + (this["forecastDay"+i]).getFullYear());
+            
+
+        }
