@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Weather Dashboard</title>
+    <title>Weather Dashboard</title> 
 </head>
 
 <!-- body -->
 <body class="flex-column min-100-vh">
-<header class="hero">
+<header>
     <h1>Weather Dashboard</h1>
 </header>
 
@@ -52,27 +52,27 @@
 <main class="flex-row justify-space-between">
     <div class="col-12 col-md-4 float-left">
       <div class="card">
-        <h3 class="card-header text-uppercase">Search By City:</h3>
-        <form id="user-form" class="card-body">
-          <label class="form-label" for="city"></label>
-          <input name="city" id="myInput" type="text" class="form-input" />
-          <button type="submit" class="btn" id="searchBtn">Search</button>
-        </form>
+        <h3>Search By City:</h3>
+        <div id="user-form" class="card-body">
+          <!-- <label class="form-label" for="city"></label> -->
+          <input id="myInput" type="text" />
+          <button class="btn" id="searchBtn">Search</button>
+        </div>
       </div>
     
-    <div class="card history">
-        <h3 class="card-header text-uppercase">Search History</h3>
+    <div class="card-history">
+        <h3 class="card-header">Search History</h3>
       </div>
     </div>
 
     <div class="col-12 col-sm-12 col-md-8 float-right">
         <div>
-          <h2 class="subtitle text-uppercase bg-light">Current Weather</h2>
+          <h2 class="subtitle">Current Weather</h2>
           <div class="city"></div>
     </div>
 
     <div>
-        <h2>5 Day forecast</h2>
+        <h2>5-Day forecast</h2>
         <div class="five-day"></div>
       </div>
     </div>

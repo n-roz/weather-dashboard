@@ -20,6 +20,7 @@
 // .catch(err => alert("Invalid entry"))
 // })
 
+
 // start js second draft
 function addResult(){
     inputCity = document.getElementById("myInput").value;  
@@ -158,6 +159,13 @@ function renderInfo () {
     var historyList = getInfo();
     for (var i=0;i<historyList.length;i++) {
         var inputCity = historyList[i];
-        
+        var searchCity = $("<div>")
+        searchCity.attr('id', inputCity)
+        searchCity.text(inputCity)
+        searchCity.addClass("h5")
+        //append
+        $(".history").append(searchCity)
     }
-}
+};
+
+renderInfo();
