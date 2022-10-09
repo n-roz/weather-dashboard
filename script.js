@@ -24,7 +24,7 @@
 function addResult(){
     inputCity = document.getElementById("myInput").value;  
     historyList = getInfo();
-    var searchCity =$("<div>") 
+    var searchCity = $("<div>") 
     searchCity.attr('id',inputCity) 
     searchCity.text(inputCity) 
     searchCity.addClass("h3")
@@ -54,8 +54,28 @@ function getResult(){
     $(".city").empty()
 
    inputCity = document.getElementById("myInput").value;   
-    var countryCode='US';    
-    var cityCode=inputCity;       
-    
+    var countryCode = 'US';
+    var cityCode = inputCity;
     var geoLon;   
     var geoLat;
+
+// getting the variables i need
+    var cityName = $("<h4>")    
+    cityName.addClass("h5") 
+    var dateTime = $("<div>") 
+    var icon = $("<img>")
+    icon.addClass("icon")
+    var temp = $("<div>")    
+    var wind = $("<div>")    
+    var humidity = $("<div>");
+  
+// append
+    $(".city").addClass("list-group")
+    $(".city").append(cityName)    
+    $(".city").append(dateTime)    
+    $(".city").append(icon)    
+    $(".city").append(temp)    
+    $(".city").append(wind)    
+    $(".city").append(humidity)
+    
+    var geoUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityCode + '&limit=5&appid=37ca395d783a15ec329da91c4fd43c95'
