@@ -81,8 +81,8 @@ function getResult(){
     $(".city").append(humidity)
     
 // first api call
-    var geoUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityCode + '',' + countryCode + '&limit=5&appid=37ca395d783a15ec329da91c4fd43c95'
-
+    // var geoUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityCode + '',' + countryCode + '&limit=5&appid=37ca395d783a15ec329da91c4fd43c95'
+    var geoURL = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=37ca395d783a15ec329da91c4fd43c95'
     fetch(geoUrl)
     .then(function (response){
       return response.json();
